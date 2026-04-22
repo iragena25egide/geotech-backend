@@ -3,6 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
 import { SoilModule } from './soil/soil.module';
+import { ProjectModule } from './project/project.module';
+import { SoilModule } from './soil/soil.module';
 
 @Module({
   imports: [
@@ -27,6 +29,8 @@ import { SoilModule } from './soil/soil.module';
     }),
 
     SoilModule,
+
+    ProjectModule,
   ],
 })
 export class AppModule {}
