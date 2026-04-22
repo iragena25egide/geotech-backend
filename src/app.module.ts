@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
 import { SoilModule } from './soil/soil.module';
+import { ReportModule } from './report/report.module';
 import { ProjectModule } from './project/project.module';
 import { SoilModule } from './soil/soil.module';
 
@@ -31,6 +32,8 @@ import { SoilModule } from './soil/soil.module';
     SoilModule,
 
     ProjectModule,
+
+    ReportModule,
   ],
 })
 export class AppModule {}
