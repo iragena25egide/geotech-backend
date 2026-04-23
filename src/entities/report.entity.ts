@@ -81,7 +81,6 @@ export class Report {
   @Column({ type: 'int', nullable: true, name: 'soil_sample_id' })
   soilSampleId: number;
 
-  // Relationships
   @ManyToOne(() => Project, (project) => project.reports, {
     onDelete: 'CASCADE',
   })
