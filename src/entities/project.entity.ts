@@ -6,7 +6,7 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { SoilSample } from './soil-sample.entity';
+import { SoilSample } from './soil.entity';
 import { Report } from './report.entity';
 
 @Entity('projects')
