@@ -57,7 +57,7 @@ export class Report {
   };
 
   @Column({ type: 'varchar', length: 50, default: 'draft' })
-  status: string; // draft, generated, approved, archived
+  status: string;
 
   @Column({ type: 'timestamp', nullable: true, name: 'generated_at' })
   generatedAt: Date;
@@ -74,7 +74,6 @@ export class Report {
   @Column({ type: 'int', nullable: true, name: 'report_version', default: 1 })
   reportVersion: number;
 
-  // Foreign Keys
   @Column({ type: 'int', name: 'project_id' })
   projectId: number;
 
