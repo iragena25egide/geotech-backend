@@ -8,7 +8,7 @@ import {
   JoinColumn,
 } from 'typeorm';
 import { Project } from './project.entity';
-import { SoilSample } from './soil-sample.entity';
+import { SoilSample } from './soil.entity';
 
 @Entity('reports')
 export class Report {
