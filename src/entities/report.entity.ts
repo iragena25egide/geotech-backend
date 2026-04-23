@@ -27,13 +27,13 @@ export class Report {
     name: 'report_type',
     default: 'soil_analysis',
   })
-  reportType: string; // soil_analysis, summary, detailed, geotechnical
+  reportType: string;
 
   @Column({ type: 'varchar', length: 255, nullable: true, name: 'file_path' })
-  filePath: string; // Path to generated PDF file
+  filePath: string;
 
   @Column({ type: 'varchar', length: 255, nullable: true, name: 'file_url' })
-  fileUrl: string; // URL to access the report
+  fileUrl: string;
 
   @Column({ type: 'jsonb', nullable: true })
   content: {
