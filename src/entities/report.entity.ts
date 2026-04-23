@@ -94,7 +94,6 @@ export class Report {
   @JoinColumn({ name: 'soil_sample_id' })
   soilSample: SoilSample;
 
-  // Timestamps
   @CreateDateColumn({ type: 'timestamp', name: 'created_at' })
   createdAt: Date;
 
