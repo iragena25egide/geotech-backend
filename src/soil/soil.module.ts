@@ -4,6 +4,6 @@ import { SoilController } from './soil.controller';
 
 @Module({
   providers: [SoilService],
-  controllers: [SoilController]
+  controllers: [SoilController],
 })
 export class SoilModule {}
