@@ -110,7 +110,7 @@ export class SoilSample {
   @Column({ type: 'int', name: 'project_id' })
   projectId: number;
 
-  // Relationships
+
   @ManyToOne(() => Project, (project) => project.soilSamples, {
     onDelete: 'CASCADE',
   })
@@ -120,7 +120,7 @@ export class SoilSample {
   @OneToMany(() => Report, (report) => report.soilSample)
   reports: Report[];
 
-  // Timestamps
+
   @CreateDateColumn({ type: 'timestamp', name: 'created_at' })
   createdAt: Date;
 
