@@ -18,10 +18,10 @@ export class SoilSample {
 
   
   @Column({ type: 'decimal', precision: 10, scale: 2, name: 'll' })
-  ll: number; // Liquid Limit
+  ll: number;
 
   @Column({ type: 'decimal', precision: 10, scale: 2, name: 'pl' })
-  pl: number; // Plastic Limit
+  pl: number;
 
   @Column({ type: 'decimal', precision: 10, scale: 2, name: 'pi' })
   pi: number; // Plasticity Index (auto-calculated)
