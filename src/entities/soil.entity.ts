@@ -16,7 +16,7 @@ export class SoilSample {
   @PrimaryGeneratedColumn()
   id: number;
 
-  // Atterberg Limits
+  
   @Column({ type: 'decimal', precision: 10, scale: 2, name: 'll' })
   ll: number; // Liquid Limit
 
