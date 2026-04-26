@@ -16,7 +16,6 @@ export class SoilSample {
   @PrimaryGeneratedColumn()
   id: number;
 
-  
   @Column({ type: 'decimal', precision: 10, scale: 2, name: 'll' })
   ll: number;
 
@@ -110,7 +109,6 @@ export class SoilSample {
   @Column({ type: 'int', name: 'project_id' })
   projectId: number;
 
-
   @ManyToOne(() => Project, (project) => project.soilSamples, {
     onDelete: 'CASCADE',
   })
@@ -119,7 +117,6 @@ export class SoilSample {
 
   @OneToMany(() => Report, (report) => report.soilSample)
   reports: Report[];
-
 
   @CreateDateColumn({ type: 'timestamp', name: 'created_at' })
   createdAt: Date;
