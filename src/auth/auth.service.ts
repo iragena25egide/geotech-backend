@@ -3,8 +3,8 @@ import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-  private readonly username = 'admin';
-  private readonly password = 'password123';
+  private readonly username = 'geotech@admin';
+  private readonly password = '123@geotech';
 
   constructor(private readonly jwtService: JwtService) {}
 
