@@ -7,6 +7,7 @@ import {
   Patch,
   Delete,
   Res,
+  Query,
   NotFoundException,
 } from '@nestjs/common';
 import { Response } from 'express';
@@ -25,7 +26,10 @@ export class ReportController {
   }
 
   @Get()
-  async findAll(): Promise<Report[]> {
+  async findAll(@Query('projectId') projectId?: string): Promise<Report[]> {
+    if (projectId) {
+      return this.reportService.findByProject(Number(projectId));
+    }
     return this.reportService.findAll();
   }
 

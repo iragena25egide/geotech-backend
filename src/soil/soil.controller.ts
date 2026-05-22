@@ -6,6 +6,7 @@ import {
   Param,
   Patch,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { SoilService } from './soil.service';
 import { SoilSample } from '../entities/soil.entity';
@@ -20,7 +21,12 @@ export class SoilController {
   }
 
   @Get()
-  async findAll(): Promise<SoilSample[]> {
+  async findAll(
+    @Query('projectId') projectId?: string,
+  ): Promise<SoilSample[]> {
+    if (projectId) {
+      return this.soilService.findByProject(Number(projectId));
+    }
     return this.soilService.findAll();
   }
 

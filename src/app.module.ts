@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 
+import { AuthModule } from './auth/auth.module';
 import { SoilModule } from './soil/soil.module';
 import { ReportModule } from './report/report.module';
 import { ProjectModule } from './project/project.module';
@@ -27,6 +28,8 @@ import { ProjectModule } from './project/project.module';
 
       synchronize: true,
     }),
+
+    AuthModule,
 
     SoilModule,
 

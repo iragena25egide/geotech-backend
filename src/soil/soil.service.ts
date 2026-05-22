@@ -16,7 +16,14 @@ export class SoilService {
   }
 
   async findAll(): Promise<SoilSample[]> {
-    return this.soilRepository.find();
+    return this.soilRepository.find({ order: { createdAt: 'DESC' } });
+  }
+
+  async findByProject(projectId: number): Promise<SoilSample[]> {
+    return this.soilRepository.find({
+      where: { projectId },
+      order: { createdAt: 'DESC' },
+    });
   }
 
   async findOne(id: number): Promise<SoilSample | null> {
