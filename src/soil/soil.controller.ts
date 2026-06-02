@@ -21,9 +21,7 @@ export class SoilController {
   }
 
   @Get()
-  async findAll(
-    @Query('projectId') projectId?: string,
-  ): Promise<SoilSample[]> {
+  async findAll(@Query('projectId') projectId?: string): Promise<SoilSample[]> {
     if (projectId) {
       return this.soilService.findByProject(Number(projectId));
     }
