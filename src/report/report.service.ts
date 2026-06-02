@@ -14,7 +14,6 @@ export class ReportService {
   ) {}
 
   async create(data: Partial<Report>): Promise<Report> {
-    // 1. Create the report entity
     const report = this.reportRepository.create(data);
 
     const reportsDir = path.resolve(__dirname, '../../reports');
@@ -26,12 +25,10 @@ export class ReportService {
 
     await this.generatePdf(report, filePath);
 
-    // 3. Save file path and file url
     report.filePath = filePath;
-    report.fileUrl = `/reports/download/${fileName}`; // internal route if needed
+    report.fileUrl = `/reports/download/${fileName}`;
     report.generatedAt = new Date();
 
-    // 4. Save report to DB
     return this.reportRepository.save(report);
   }
 
@@ -262,12 +259,10 @@ export class ReportService {
         .fontSize(8.5)
         .font('Helvetica-Bold')
         .text('PREPARED BY', 50, sigY + 6, { width: 150, align: 'center' });
-      doc
-        .font('Helvetica')
-        .text('Laboratory Specialist', 50, sigY + 18, {
-          width: 150,
-          align: 'center',
-        });
+      doc.font('Helvetica').text('Laboratory Specialist', 50, sigY + 18, {
+        width: 150,
+        align: 'center',
+      });
 
       doc
         .font('Helvetica-Bold')
