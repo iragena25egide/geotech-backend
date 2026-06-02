@@ -12,7 +12,6 @@ export class AuthController {
 
   @Post('logout')
   async logout() {
-    // For JWT, logout is handled on the client by deleting the token.
     return { message: 'Logged out (client should delete token)' };
   }
 }
