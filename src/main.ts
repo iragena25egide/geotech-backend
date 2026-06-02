@@ -17,7 +17,8 @@ async function bootstrap() {
     new ValidationPipe({ whitelist: true, forbidNonWhitelisted: false }),
   );
 
-  await app.listen(3000);
-  console.log('🌍 GeoTech API running on http://localhost:3000');
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+  console.log(`🌍 GeoTech API running on port ${port}`);
 }
 bootstrap();
