@@ -6,7 +6,8 @@ import { AuthModule } from './auth/auth.module';
 import { SoilModule } from './soil/soil.module';
 import { ReportModule } from './report/report.module';
 import { ProjectModule } from './project/project.module';
-
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -39,5 +40,7 @@ import { ProjectModule } from './project/project.module';
 
     ReportModule,
   ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
