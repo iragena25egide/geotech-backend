@@ -24,6 +24,8 @@ import { ProjectModule } from './project/project.module';
 
       database: process.env.DB_NAME,
 
+      ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
+
       autoLoadEntities: true,
 
       synchronize: true,
