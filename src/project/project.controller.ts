@@ -9,13 +9,14 @@ import {
 } from '@nestjs/common';
 import { ProjectService } from './project.service';
 import { Project } from '../entities/project.entity';
+import { CreateProjectDto, UpdateProjectDto } from './project.dto';
 
 @Controller('projects')
 export class ProjectController {
   constructor(private readonly projectService: ProjectService) {}
 
   @Post()
-  async create(@Body() data: Partial<Project>): Promise<Project> {
+  async create(@Body() data: CreateProjectDto): Promise<Project> {
     return this.projectService.create(data);
   }
 
@@ -32,7 +33,7 @@ export class ProjectController {
   @Patch(':id')
   async update(
     @Param('id') id: string,
-    @Body() data: Partial<Project>,
+    @Body() data: UpdateProjectDto,
   ): Promise<Project | null> {
     return this.projectService.update(Number(id), data);
   }
