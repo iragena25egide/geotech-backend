@@ -40,7 +40,6 @@ export class ReportService {
 
       // --- COLOR PALETTE ---
       const primaryColor = '#0f3460';
-      const secondaryColor = '#16213e';
       const accentColor = '#e94560';
       const neutralLight = '#f4f6f9';
       const textColor = '#333333';
@@ -225,7 +224,7 @@ export class ReportService {
         'Additional in-situ standard penetration tests (SPT) are recommended for heavy foundation designs.',
       ];
 
-      recList.forEach((rec, index) => {
+      recList.forEach((rec) => {
         doc
           .fontSize(9.5)
           .font('Helvetica-Bold')

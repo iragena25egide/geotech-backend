@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: geotech-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: postgresql://postgres:FovLqIrIwynsuCQqRyQMVaUgyEtbrxJF@iriguchi.proxy.rlwy.net:41912/railway
+      - key: DB_HOST
+        value: iriguchi.proxy.rlwy.net
+      - key: DB_PORT
+        value: "41912"
+      - key: DB_USERNAME
+        value: postgres
+      - key: DB_PASSWORD
+        value: FovLqIrIwynsuCQqRyQMVaUgyEtbrxJF
+      - key: DB_NAME
+        value: railway
+      - key: DB_SSL
+        value: "true"
+      - key: JWT_SECRET
+        generateValue: true
